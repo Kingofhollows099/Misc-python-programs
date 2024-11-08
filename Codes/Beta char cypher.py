@@ -21,14 +21,15 @@ def decrypt(phrase, offset):
             base = -1  # Last letter
 
         # Calculate position change
-        word_length = sum(1 for char in word if char.isalpha())
+        word_length = len(word)
+        #word_length = sum(1 for char in word if char.isalpha())
         position_change = word_length % (offset - word_length)
 
         # Calculate new position
         if base == 0:
             new_position = position_change - 1
         else:
-            new_position = -position_change
+            new_position = 0 - position_change
 
         if base == 0 and word[new_position] == 's':
             output += ' '
