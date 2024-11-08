@@ -21,7 +21,7 @@ def decrypt(phrase, offset):
             base = -1  # Last letter
 
         # Calculate position change
-        word_length = len(word)
+        word_length = sum(1 for char in word if char.isalpha())
         position_change = word_length % (offset - word_length)
 
         # Calculate new position
@@ -75,6 +75,7 @@ def scan_file(flag, letter):
                 if word[0 - shiftNum].lower() == letter.lower() and word[1].lower() in second_half:
                     output.append(line)
     return output
+
 def encrypt(phrase, offset):
     output = ""
     ingredients = []
@@ -99,7 +100,6 @@ def encrypt(phrase, offset):
             output += ' ' + random.choice(scan_file(i[1], i[2])).replace('\n', '')
 
     return output
-
 
 choise = input("Do you want to encrypt or decrypt? (e/d): ")
 prompt = input("Please enter prompt: ").lower()
