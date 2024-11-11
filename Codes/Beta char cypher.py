@@ -5,9 +5,32 @@ offset = 5 #0-7 is recommendeded. This increases the complexity of the cypher si
 
 def decrypt(phrase, offset):
     output = ""
-    words = phrase.split()
-
+    words = []
+    split_phrase = phrase.split()
+    for part in split_phrase:
+        start = 0
+        for i, char in enumerate(part):
+            if char.isdigit():
+                if start < i:
+                    words.append(part[start:i])
+                end_idx = i
+                while end_idx < len(part) and part[end_idx].isdigit():
+                    end_idx += 1
+                words.append(part[i:end_idx])
+                start = end_idx
+            elif char in ['.', '!', '?']:
+                if start < i:
+                    words.append(part[start:i])
+                words.append(char)
+                start = i + 1
+        if start < len(part):
+            words.append(part[start:])
+            
     for word in words:
+        # If a ., !, or ? shows up, just append it to the string as well
+        if word in ['.', '!', '?', ',', ':', '@', "'", ';', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', ','] or word.isdigit():
+            output += word
+            continue
         # Record 1st letter of word
         first_letter = word[0]
 
@@ -19,7 +42,7 @@ def decrypt(phrase, offset):
             base = 0  # First letter
         else:
             base = -1  # Last letter
-
+ 
         # Calculate position change
         word_length = len(word)
         #word_length = sum(1 for char in word if char.isalpha())
@@ -36,10 +59,6 @@ def decrypt(phrase, offset):
         else:
         # Append character at new position to result string
             output += word[new_position]
-
-        # If a ., !, or ? shows up, just append it to the string as well
-        if word[-1] in ['.', '!', '?']:
-            output += word[-1]
 
     return output
 
@@ -111,3 +130,4 @@ elif choise == "e":
     output = encrypt(prompt, offset)
 
 print(output)
+
