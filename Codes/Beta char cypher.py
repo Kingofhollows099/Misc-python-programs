@@ -1,9 +1,8 @@
 import random
-offset = 5 #0-7 is recommendeded. This increases the complexity of the cypher significantly, but prevents the use of words that have this many characters.
 
 # Ingredient packets: [Do encryption 0/1, first letter:last letter::0:1, character]. Second position is skipped if first is 0. for example: [1, 0, 'k'] vs. [0, '2'] or [0, '@']
 
-def decrypt(phrase, offset):
+def decrypt(phrase, offset): #fix: when it comes to a number, set a variable t otrue. When that variable is true, have it just move foreward until it reaches a non-number (in its own, nested, loop) record the numbers from tehr beginning to last digit, and make that a word. then use teh "continue" command once for each of the digits in the main loop to skip the rest of thye numbers.
     output = ""
     words = []
     split_phrase = phrase.split()
@@ -123,11 +122,18 @@ def encrypt(phrase, offset):
 
 choise = input("Do you want to encrypt or decrypt? (e/d): ")
 prompt = input("Please enter prompt: ").lower()
+offset = int(input("Please enter the key #: ")) #0-7 is recommendeded. This increases the complexity of the cypher significantly, but prevents the use of words that have this many characters.
 
-if choise == "d":
-    output = decrypt(prompt, offset)
-elif choise == "e":
-    output = encrypt(prompt, offset)
+passCheck = False
+while not passCheck:
+    if choise == "d":
+        passCheck = True
+        output = decrypt(prompt, offset)
+    elif choise == "e":
+        passCheck = True
+        output = encrypt(prompt, offset)
+    else:
+        print("Invalid input. Please try again.")
 
 print(output)
 
