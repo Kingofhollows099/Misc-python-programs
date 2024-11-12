@@ -9,12 +9,10 @@ def resource_path(relative_path):
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
     except Exception:
-        base_path = os.path.abspath(".")
+        base_path = os.path.abspath("Codes\\Beta Char cypher\\")
 
     return os.path.join(base_path, relative_path)
 
-# Use the function to get the correct path to englishWords.txt
-words_file_path = resource_path("Codes\Beta Char cypher\englishWords.txt")
 
 # Ingredient packets: [Do encryption 0/1, first letter:last letter::0:1, character]. The second position is skipped if the first is 0. For example: [1, 0, 'k'] vs. [0, '2'] or [0, '@']
 
@@ -115,7 +113,7 @@ def scan_file(flag, letter):
     list
         A list of words that fit the criteria.
     """
-    input_filename = words_file_path
+    input_filename = resource_path("englishWords.txt")
     output = []
 
     # Define the ranges for the second letter
@@ -197,4 +195,17 @@ while not passCheck:
         print("Invalid input. Please try again.")
 
 print(output)
+
+import pyperclip
+
+while True:
+    copyCheck = input("Would you like to copy the output to your clipboard? (y/n): ")
+    if copyCheck.lower() == "y":
+        pyperclip.copy(output)
+        print("Output copied to clipboard.")
+        break
+    elif copyCheck.lower() == "n":
+        break
+    else:
+        print("Invalid input. Please try again.")
 
