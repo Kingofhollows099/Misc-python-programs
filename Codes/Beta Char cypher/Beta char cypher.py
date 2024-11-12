@@ -1,7 +1,7 @@
 import random
 import re
 
-# Ingredient packets: [Do encryption 0/1, first letter:last letter::0:1, character]. Second position is skipped if first is 0. for example: [1, 0, 'k'] vs. [0, '2'] or [0, '@']
+# Ingredient packets: [Do encryption 0/1, first letter:last letter::0:1, character]. The second position is skipped if the first is 0. For example: [1, 0, 'k'] vs. [0, '2'] or [0, '@']
 
 specialCharList = ['.', '!', '?', ',', ':', '@', "'", ';', '$', '%', '^', '&', '*', '(', ')', '[', ']', '_', '+', '-', ',', '#']
 
@@ -168,7 +168,7 @@ def encrypt(phrase, offset):
 
 choise = input("Do you want to encrypt or decrypt? (e/d): ")
 prompt = input("Please enter prompt: ").lower()
-offset = int(input("Please enter the key #: ")) #0-7 is recommendeded. This increases the complexity of the cypher significantly, but prevents the use of words that have this many characters.
+offset = int(input("Please enter the key #: ")) #0-7 is recommendeded. This increases the complexity of the cipher significantly but prevents the use of words that have this many characters. Its also not incredibly difficult to figure out the key, as using any other key of near length will most likely fail.
 
 passCheck = False
 while not passCheck:
