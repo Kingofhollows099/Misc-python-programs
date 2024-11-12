@@ -1,0 +1,4 @@
+Do not include numbers or special characters that are located at the end of the word/phrase in the word list. Characters within the word are fine.
+
+Allowed special chars:
+['.', '!', '?', ',', ':', '@', "'", ';', '$', '%', '^', '&', '*', '(', ')', '[', ']', '_', '+', '-', ',', '#']
