@@ -3,7 +3,7 @@ import re
 import os
 import sys
 
-def resource_path(relative_path):
+def resourcePath(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
@@ -40,9 +40,9 @@ def decrypt(phrase, offset):
     """
     output = ""
     words = []
-    split_phrase = phrase.split()
+    splitPhrase = phrase.split()
 
-    for part in split_phrase: #for each word
+    for part in splitPhrase: #for each word
         iterNum = 0
         exceptionEnabled = False
         for i, char in enumerate(part): #for each character
@@ -64,33 +64,33 @@ def decrypt(phrase, offset):
             output += word
             continue
         # Record 1st letter of word
-        first_letter = word[0]
+        firstLetter = word[0]
 
         # Look at 2nd letter
-        second_letter = word[1]
+        secondLetter = word[1]
 
         # Determine base position
-        if second_letter.lower() in 'abcdefghijklm':
+        if secondLetter.lower() in 'abcdefghijklm':
             base = 0  # First letter
         else:
             base = -1  # Last letter
  
         # Calculate position change
-        word_length = len(word)
-        #word_length = sum(1 for char in word if char.isalpha())
-        position_change = word_length % (offset - word_length)
+        wordLength = len(word)
+        #wordLength = sum(1 for char in word if char.isalpha())
+        positionChange = wordLength % (offset - wordLength)
 
         # Calculate new position
         if base == 0:
-            new_position = position_change - 1
+            newPos = positionChange - 1
         else:
-            new_position = 0 - position_change
+            newPos = 0 - positionChange
 
-        if base == 0 and word[new_position] == 's':
+        if base == 0 and word[newPos] == 's':
             output += ' '
         else:
         # Append character at new position to result string
-            output += word[new_position]
+            output += word[newPos]
 
     return output
 
@@ -113,14 +113,14 @@ def scan_file(flag, letter):
     list
         A list of words that fit the criteria.
     """
-    input_filename = resource_path("englishWords.txt")
+    inputFile = resourcePath("englishWords.txt")
     output = []
 
     # Define the ranges for the second letter
-    first_half = set('abcdefghijklm')
-    second_half = set('nopqrstuvwxyz')
+    firstHalf = set('abcdefghijklm')
+    secondHalf = set('nopqrstuvwxyz')
 
-    with open(input_filename, 'r') as input_file:
+    with open(inputFile, 'r') as input_file:
         for line in input_file:
             word = line.strip()
             wordLen = len(word)
@@ -131,10 +131,10 @@ def scan_file(flag, letter):
             shiftNum = wordLen % (offset - wordLen)
 
             if flag == 0:
-                if word[-1 + shiftNum].lower() == letter.lower() and word[1].lower() in first_half:
+                if word[-1 + shiftNum].lower() == letter.lower() and word[1].lower() in firstHalf:
                     output.append(line)
             elif flag == 1:
-                if word[0 - shiftNum].lower() == letter.lower() and word[1].lower() in second_half:
+                if word[0 - shiftNum].lower() == letter.lower() and word[1].lower() in secondHalf:
                     output.append(line)
     return output
 
@@ -179,16 +179,16 @@ def encrypt(phrase, offset):
 
     return output
 
-choise = input("Do you want to encrypt or decrypt? (e/d): ")
+choice = input("Do you want to encrypt or decrypt? (e/d): ")
 prompt = input("Please enter prompt: ").lower()
 offset = int(input("Please enter the key #: ")) #0-7 is recommendeded. This increases the complexity of the cipher significantly but prevents the use of words that have this many characters. Its also not incredibly difficult to figure out the key, as using any other key of near length will most likely fail.
 
 passCheck = False
 while not passCheck:
-    if choise == "d":
+    if choice == "d":
         passCheck = True
         output = decrypt(prompt, offset)
-    elif choise == "e":
+    elif choice == "e":
         passCheck = True
         output = encrypt(prompt, offset)
     else:
