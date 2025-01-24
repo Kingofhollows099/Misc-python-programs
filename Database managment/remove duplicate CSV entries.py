@@ -1,123 +1,210 @@
 import csv
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter import Tk, Label, Button, filedialog, messagebox, StringVar, BooleanVar, Checkbutton, Frame, Toplevel, Scrollbar, Canvas
+import tkinter as tk
+
 
 def remove_duplicate_passwords():
-    """
-    Removes duplicates from a CSV file based on user-selected columns. Offers auto or interactive mode.
-    """
-    try:
-        # Hide the root Tkinter window
-        Tk().withdraw()
+    class DuplicatePasswordApp:
+        def __init__(self, root):
+            self.root = root
+            self.root.title("Duplicate Password Remover")
 
-        # Prompt the user to select the input file
-        input_file = askopenfilename(title="Select Input CSV File", filetypes=[("CSV Files", "*.csv")])
-        if not input_file:
-            print("No file selected. Exiting.")
-            return
+            self.input_file = None
+            self.output_file = None
+            self.rows = []
+            self.match_columns = []
+            self.fieldnames = []
 
-        # Prompt the user to select the output file
-        output_file = asksaveasfilename(title="Save Output CSV File As", defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
-        if not output_file:
-            print("No output file selected. Exiting.")
-            return
+            self.mode = StringVar(value="auto")
+            self.current_duplicates = []
+            self.unique_rows = []
+            self.seen_values = {}
+            self.selected_columns = []
 
-        # Read the input CSV file
-        with open(input_file, 'r', newline='', encoding='utf-8') as infile:
-            reader = csv.DictReader(infile)
-            rows = list(reader)
+            self.setup_ui()
 
-        if not reader.fieldnames:
-            raise ValueError("The input CSV has no columns.")
+        def setup_ui(self):
+            Label(self.root, text="Select Mode:").grid(row=0, column=0, pady=10)
 
-        # Prompt the user to select columns to match
-        print("Available columns:")
-        for i, column in enumerate(reader.fieldnames):
-            print(f"{i + 1}. {column}")
+            Button(self.root, text="Open CSV", command=self.open_file).grid(row=0, column=1, padx=10)
+            Button(self.root, text="Save As", command=self.save_file).grid(row=0, column=2, padx=10)
 
-        selected_columns = input("Enter the numbers of the columns to match against, separated by commas: ").split(',')
-        try:
-            match_columns = [reader.fieldnames[int(i.strip()) - 1] for i in selected_columns if i.strip().isdigit() and 0 < int(i.strip()) <= len(reader.fieldnames)]
-        except (IndexError, ValueError):
-            print("Invalid column selection. Exiting.")
-            return
+            Checkbutton(self.root, text="Automatic", variable=self.mode, onvalue="auto").grid(row=1, column=0, sticky="w")
+            Checkbutton(self.root, text="Interactive", variable=self.mode, onvalue="interactive").grid(row=1, column=1, sticky="w")
 
-        if not match_columns:
-            print("No valid columns selected. Exiting.")
-            return
+            Button(self.root, text="Start", command=self.start_processing).grid(row=2, column=0, columnspan=3, pady=10)
 
-        print(f"Matching on columns: {', '.join(match_columns)}")
+        def open_file(self):
+            self.input_file = filedialog.askopenfilename(filetypes=[("CSV Files", "*.csv")])
+            if not self.input_file:
+                messagebox.showerror("Error", "No file selected.")
+                return
 
-        # Ask the user if they want auto or interactive mode
-        mode = input("Select mode: 'auto' to automatically remove duplicates or 'interactive' to review duplicates manually: ").strip().lower()
+            with open(self.input_file, "r", newline="", encoding="utf-8") as infile:
+                reader = csv.DictReader(infile)
+                self.rows = list(reader)
+                self.fieldnames = reader.fieldnames
 
-        if mode == 'auto':
-            # Auto mode: Remove duplicates based on the selected columns
+                if not self.fieldnames:
+                    messagebox.showerror("Error", "The selected CSV file has no columns.")
+                    return
+
+                self.select_columns()
+
+        def save_file(self):
+            self.output_file = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
+            if not self.output_file:
+                messagebox.showerror("Error", "No output file selected.")
+
+        def select_columns(self):
+            top = Toplevel(self.root)
+            top.title("Select Columns to Match")
+
+            Label(top, text="Select the columns to use for identifying duplicates:").pack(pady=10)
+
+            column_frame = Frame(top)
+            column_frame.pack(pady=10)
+
+            self.column_vars = {}
+            for column in self.fieldnames:
+                var = BooleanVar()
+                Checkbutton(column_frame, text=column, variable=var).pack(anchor="w")
+                self.column_vars[column] = var
+
+            Button(top, text="Confirm", command=lambda: self.confirm_columns(top)).pack(pady=10)
+
+        def confirm_columns(self, window):
+            self.selected_columns = [col for col, var in self.column_vars.items() if var.get()]
+            if not self.selected_columns:
+                messagebox.showerror("Error", "No columns selected.")
+                return
+
+            window.destroy()
+
+        def start_processing(self):
+            if not self.input_file or not self.output_file:
+                messagebox.showerror("Error", "Please select both input and output files.")
+                return
+
+            if not self.selected_columns:
+                messagebox.showerror("Error", "Please select columns to match against.")
+                return
+
+            if self.mode.get() == "auto":
+                self.auto_mode()
+            elif self.mode.get() == "interactive":
+                self.interactive_mode()
+
+        def auto_mode(self):
             seen_values = set()
             unique_rows = []
 
-            for row in rows:
-                key = tuple(row[column] for column in match_columns)
+            for row in self.rows:
+                key = tuple(row[col] for col in self.selected_columns)
                 if key not in seen_values:
                     seen_values.add(key)
                     unique_rows.append(row)
 
-            # Write the unique rows to the output CSV file
-            with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
-                writer = csv.DictWriter(outfile, fieldnames=reader.fieldnames)
-                writer.writeheader()
-                writer.writerows(unique_rows)
+            self.write_output(unique_rows)
+            messagebox.showinfo("Success", f"Duplicates removed. Output saved to {self.output_file}.")
 
-            print(f"Duplicates removed successfully. Output saved to {output_file}.")
-
-        elif mode == 'interactive':
-            # Interactive mode: Review and handle duplicates manually
-            seen_values = {}
-            for row in rows:
-                key = tuple(row[column] for column in match_columns)
-                if key not in seen_values:
-                    seen_values[key] = [row]
+        def interactive_mode(self):
+            self.seen_values = {}
+            for row in self.rows:
+                key = tuple(row[col] for col in self.selected_columns)
+                if key not in self.seen_values:
+                    self.seen_values[key] = [row]
                 else:
-                    seen_values[key].append(row)
+                    self.seen_values[key].append(row)
 
-            unique_rows = []
-            for key, duplicates in seen_values.items():
-                if len(duplicates) == 1:
-                    unique_rows.append(duplicates[0])
-                else:
-                    print(f"Duplicate entries found for key: {key}")
-                    for i, duplicate in enumerate(duplicates):
-                        print(f"{i + 1}: {duplicate}")
+            self.unique_rows = []
+            self.duplicate_keys = [key for key, rows in self.seen_values.items() if len(rows) > 1]
+            self.duplicate_index = 0
 
-                    action = input("Enter the number of the entry to keep, 'm' to merge, or 'i' to ignore these entries: ").strip().lower()
-                    if action.isdigit() and 1 <= int(action) <= len(duplicates):
-                        unique_rows.append(duplicates[int(action) - 1])
-                    elif action == 'm':
-                        merged_entry = {column: "" for column in reader.fieldnames}
-                        for duplicate in duplicates:
-                            for column in reader.fieldnames:
-                                merged_entry[column] += duplicate[column] + " | " if duplicate[column] else ""
-                        unique_rows.append({column: value.strip(' | ') for column, value in merged_entry.items()})
-                    elif action == 'i':
-                        print("Ignored these entries.")
+            self.show_duplicates_ui()
 
-            # Write the unique rows to the output CSV file
-            with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
-                writer = csv.DictWriter(outfile, fieldnames=reader.fieldnames)
+        def show_duplicates_ui(self):
+            if self.duplicate_index >= len(self.duplicate_keys):
+                self.write_output(self.unique_rows)
+                messagebox.showinfo("Success", f"Interactive processing completed. Output saved to {self.output_file}.")
+                return
+
+            key = self.duplicate_keys[self.duplicate_index]
+            duplicates = self.seen_values[key]
+
+            top = Toplevel(self.root)
+            top.title("Resolve Duplicates")
+
+            Label(top, text=f"Duplicates for key: {key}").pack(pady=10)
+
+            canvas = Canvas(top)
+            frame = Frame(canvas)
+            scrollbar = Scrollbar(top, orient="vertical", command=canvas.yview)
+
+            canvas.configure(yscrollcommand=scrollbar.set)
+
+            scrollbar.pack(side="right", fill="y")
+            canvas.pack(side="left", fill="both", expand=True)
+
+            canvas.create_window((0, 0), window=frame, anchor="nw")
+
+            for duplicate in duplicates:
+                row_frame = Frame(frame)
+                row_frame.pack(fill="x", padx=5, pady=2)
+                for col in self.fieldnames:
+                    Label(row_frame, text=duplicate[col], relief="groove", width=15).pack(side="left", padx=1)
+
+            frame.update_idletasks()
+            canvas.config(scrollregion=canvas.bbox("all"))
+
+            Button(top, text="Delete Selected", command=lambda: self.delete_selected(top)).pack(side="left", padx=5, pady=10)
+            Button(top, text="Merge Selected", command=lambda: self.merge_selected(top)).pack(side="left", padx=5, pady=10)
+            Button(top, text="Next", command=lambda: self.skip_duplicates(top)).pack(side="right", padx=5, pady=10)
+
+        def delete_selected(self, window):
+            selected_indices = [int(item) for item in self.duplicate_list.curselection()]
+            duplicates = self.seen_values[self.duplicate_keys[self.duplicate_index]]
+
+            for index in sorted(selected_indices, reverse=True):
+                duplicates.pop(index)
+
+            if len(duplicates) == 1:
+                self.unique_rows.append(duplicates[0])
+
+            self.duplicate_index += 1
+            window.destroy()
+            self.show_duplicates_ui()
+
+        def merge_selected(self, window):
+            selected_indices = [int(item) for item in self.duplicate_list.curselection()]
+            duplicates = self.seen_values[self.duplicate_keys[self.duplicate_index]]
+
+            merged_row = {col: "" for col in self.fieldnames}
+            for index in selected_indices:
+                for col in self.fieldnames:
+                    merged_row[col] += duplicates[index][col] + " | " if duplicates[index][col] else ""
+
+            merged_row = {col: val.strip(" | ") for col, val in merged_row.items()}
+            self.unique_rows.append(merged_row)
+
+            self.duplicate_index += 1
+            window.destroy()
+            self.show_duplicates_ui()
+
+        def skip_duplicates(self, window):
+            self.duplicate_index += 1
+            window.destroy()
+            self.show_duplicates_ui()
+
+        def write_output(self, rows):
+            with open(self.output_file, "w", newline="", encoding="utf-8") as outfile:
+                writer = csv.DictWriter(outfile, fieldnames=self.fieldnames)
                 writer.writeheader()
-                writer.writerows(unique_rows)
+                writer.writerows(rows)
 
-            print(f"Interactive deduplication completed. Output saved to {output_file}.")
-
-        else:
-            print("Invalid mode selected. Exiting.")
-
-    except FileNotFoundError:
-        print(f"Error: File not found: {input_file}")
-    except ValueError as e:
-        print(f"Error: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+    root = Tk()
+    app = DuplicatePasswordApp(root)
+    root.mainloop()
 
 # Example usage
 remove_duplicate_passwords()
