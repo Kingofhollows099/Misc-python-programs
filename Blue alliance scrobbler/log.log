@@ -1,0 +1,203 @@
+[2025-04-19] Data.json does not exist. Creating new file.
+[2025-04-19] Fetched 2023 season data from API.
+[2025-04-19] Fetched 2024 season data from API.
+[2025-04-19] Fetched 2025 season data from API.
+[2025-04-19] Fetched 2023 season data from API.
+[2025-04-19] Fetched 2024 season data from API.
+[2025-04-19] Fetched 2025 season data from API.
+[2025-04-19 22:13:34.200055] Data.json does not exist. Creating new file.
+[2025-04-19 22:13:34.489309] Fetched 2023 season data from API.
+[2025-04-19 22:13:34.707127] Fetched 2024 season data from API.
+[2025-04-19 22:13:34.923988] Fetched 2025 season data from API.
+[2025-04-19 22:13:44.044934] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:13:44.060248] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:15:10.799855] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:15:10.800855] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:16:52.429598] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:16:52.430596] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:16:52.431599] 2025 season already in Data.json. API request not sent.
+[2025-04-19 22:17:15.491708] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:17:15.492710] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:17:16.055569] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:20:40.982463] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:20:40.983462] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:20:41.202303] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:23:09.065688] Data.json does not exist. Creating new file.
+[2025-04-19 22:23:09.383888] Fetched 2023 season data from API.
+[2025-04-19 22:23:09.636006] Fetched 2024 season data from API.
+[2025-04-19 22:23:09.636006] 2025 season already in Data.json. API request not sent.
+[2025-04-19 22:23:09.636006] -------- Program finished --------
+[2025-04-19 22:24:04.967487] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:24:04.967487] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:24:05.949961] Fetched 2025 season data from API.
+[2025-04-19 22:24:05.984609] -------- Program finished --------
+[2025-04-19 22:29:41.470238] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:29:41.471246] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:29:41.893323] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:29:41.972926] 
+-------- Program finished --------
+
+
+[2025-04-19 22:32:01.297106] Data.json does not exist. Creating new file.
+[2025-04-19 22:32:01.579481] Fetched 2023 season data from API.
+[2025-04-19 22:32:01.799931] Fetched 2024 season data from API.
+[2025-04-19 22:32:02.133938] Fetched 2025 season data from API.
+[2025-04-19 22:32:02.172928] -------- Program finished --------
+
+
+[2025-04-19 22:36:01.990746] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:36:01.991746] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:36:01.992757] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:36:01.993757] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:36:31.869710] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:36:31.869710] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:36:31.869710] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:36:31.869710] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:40:56.443691] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:40:56.443691] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:40:56.443691] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:40:56.443691] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:40:56.443691] An error occurred: <class 'KeyError'>
+[2025-04-19 22:41:53.243349] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:41:53.244473] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:41:53.245404] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:41:53.246745] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:42:07.419794] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:42:07.420796] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:42:07.421788] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:42:07.422790] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:42:07.422790] An error occurred: 2025
+[2025-04-19 22:42:32.960857] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:42:32.961660] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:42:32.961660] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:42:32.963992] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:42:32.964502] An error occurred: (<class 'KeyError'>, KeyError(2025), <traceback object at 0x000002AC419C7880>)
+[2025-04-19 22:43:22.936125] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:43:22.936125] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:43:22.936125] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:43:22.936125] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:44:50.510854] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:44:50.511882] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:44:50.512880] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:44:50.513347] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:45:36.337675] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:45:36.339678] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:45:36.340674] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:45:36.341677] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:46:01.349614] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:46:01.350621] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:46:01.351618] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:46:01.352618] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:46:01.353626] An error occurred: <class 'KeyError'> 2025
+[2025-04-19 22:47:36.552497] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:47:36.553357] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:47:36.554173] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:47:36.554173] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:47:36.554173] An error occurred: 2025
+[2025-04-19 22:48:12.840154] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:48:12.840154] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:48:12.854969] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:48:12.855967] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:48:12.856757] An error occurred: 2025
+[2025-04-19 22:48:51.857199] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:48:51.857199] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:48:51.857199] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:48:51.857199] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:48:51.868154] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\Blue Alliance scrobbler.py", line 60, in <module>
+    data["years"].pop(year)
+KeyError: 2025
+
+[2025-04-19 22:50:10.803415] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:50:10.803415] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:50:10.803415] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:50:10.803415] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:50:10.803415] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\Blue Alliance scrobbler.py", line 60, in <module>
+    data["years"].pop(year)
+KeyError: 2025
+
+
+
+[2025-04-19 22:50:41.153467] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:50:41.154494] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:50:41.155466] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:50:41.156464] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:50:41.161465] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\Blue Alliance scrobbler.py", line 60, in <module>
+    data["years"].pop(year)
+KeyError: 2025
+
+
+
+[2025-04-19 22:50:41.162468] -------- Program finished with error --------
+
+
+[2025-04-19 22:51:07.325655] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:51:07.325655] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:51:07.325655] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:51:07.341417] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:51:07.342405] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\Blue Alliance scrobbler.py", line 60, in <module>
+    data["years"].pop(year)
+KeyError: 2025
+
+[2025-04-19 22:51:07.342405] -------- Program finished with error --------
+
+
+[2025-04-19 22:56:37.090776] 2023 season already in Data.json. API request not sent.
+[2025-04-19 22:56:37.091884] 2024 season already in Data.json. API request not sent.
+[2025-04-19 22:56:37.093129] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 22:56:37.094514] Deleting old 2025 season data from Data.json.
+[2025-04-19 22:56:37.537643] -------- Program finished --------
+
+
+[2025-04-19 22:57:09.413701] Data.json does not exist. Creating new file.
+[2025-04-19 22:57:10.303383] Fetched 2023 season data from API.
+[2025-04-19 22:57:11.803167] Fetched 2024 season data from API.
+[2025-04-19 22:57:11.804168] Fetched 2025 season data from API.
+[2025-04-19 22:57:12.659891] -------- Program finished --------
+
+
+[2025-04-19 23:52:22.665912] 2023 season already in Data.json. API request not sent.
+[2025-04-19 23:52:22.809460] 2024 season already in Data.json. API request not sent.
+[2025-04-19 23:52:22.813205] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-19 23:52:22.816212] Deleting old 2025 season data from Data.json.
+[2025-04-19 23:52:23.235785] -------- Program finished --------
+
+
+[2025-04-19 23:52:35.561141] Data.json does not exist. Creating new file.
+[2025-04-19 23:52:36.193223] Fetched 2023 season data from API.
+[2025-04-19 23:52:36.530652] Fetched 2024 season data from API.
+[2025-04-19 23:52:36.532236] Fetched 2025 season data from API.
+[2025-04-19 23:52:36.993320] -------- Program finished --------
+
+
+[2025-04-20 00:10:35.042039] Data.json does not exist. Creating new file.
+[2025-04-20 00:10:35.621183] Fetched 2023 season data from API.
+[2025-04-20 00:10:36.188242] Fetched 2024 season data from API.
+[2025-04-20 00:10:36.190236] Fetched 2025 season data from API.
+[2025-04-20 00:10:36.696802] -------- Program finished --------
+
+
+[2025-04-20 08:26:19.131558] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\Blue Alliance scrobbler.py", line 45, in <module>
+    yearData[year - 2] = requests.get(f"{url}/events/{year - 2}", headers=headers).json()
+    ~~~~~~~~^^^^^^^^^^
+TypeError: 'tuple' object does not support item assignment
+
+[2025-04-20 08:26:19.132558] -------- Program finished with error --------
+
+
+[2025-04-20 08:26:46.321334] 2023 season already in Data.json. API request not sent.
+[2025-04-20 08:26:46.322340] 2024 season already in Data.json. API request not sent.
+[2025-04-20 08:26:46.323341] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 08:26:46.323341] Deleting old 2025 season data from Data.json.
+[2025-04-20 08:26:47.301891] -------- Program finished --------
+
+
