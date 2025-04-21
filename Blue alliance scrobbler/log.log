@@ -201,3 +201,498 @@ TypeError: 'tuple' object does not support item assignment
 [2025-04-20 08:26:47.301891] -------- Program finished --------
 
 
+[2025-04-20 09:56:36.754058] -------- Program start --------
+[2025-04-20 09:56:36.776054] 2023 season already in Data.json. API request not sent.
+[2025-04-20 09:56:36.776054] 2024 season already in Data.json. API request not sent.
+[2025-04-20 09:56:36.777053] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 09:56:36.778054] Deleting old 2025 season data from Data.json.
+[2025-04-20 09:56:40.301504] -------- Program finished --------
+
+
+[2025-04-20 10:28:06.197685] -------- Fetch start --------
+[2025-04-20 10:28:06.219881] 2023 season already in Data.json. API request not sent.
+[2025-04-20 10:28:06.219881] 2024 season already in Data.json. API request not sent.
+[2025-04-20 10:28:06.220881] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 10:28:06.220881] Deleting old 2025 season data from Data.json.
+[2025-04-20 10:28:07.002421] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 76, in fetchData
+    yearData[year] = numerate(requests.get(f"{url}/events/{year}", headers=headers).json())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 24, in numerate
+    out.append({i: data[i]})
+    ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'append'
+
+[2025-04-20 10:28:07.003431] -------- Fetch ended with error --------
+
+
+[2025-04-20 10:29:50.149769] -------- Fetch start --------
+[2025-04-20 10:29:50.171938] 2023 season already in Data.json. API request not sent.
+[2025-04-20 10:29:50.172939] 2024 season already in Data.json. API request not sent.
+[2025-04-20 10:29:50.172939] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 10:29:50.173941] Deleting old 2025 season data from Data.json.
+[2025-04-20 10:29:50.996210] Fetched 2025 season data from API.
+[2025-04-20 10:29:51.146867] -------- Fetch finished --------
+
+
+[2025-04-20 10:30:01.296472] -------- Fetch start --------
+[2025-04-20 10:30:01.297477] Data.json does not exist. Creating new file.
+[2025-04-20 10:30:02.028861] Fetched 2023 season data from API.
+[2025-04-20 10:30:02.907453] Fetched 2024 season data from API.
+[2025-04-20 10:30:03.383957] Fetched 2025 season data from API.
+[2025-04-20 10:30:03.528928] -------- Fetch finished --------
+
+
+[2025-04-20 10:45:00.110409] -------- Fetch start --------
+[2025-04-20 10:45:00.111411] Data.json does not exist. Creating new file.
+[2025-04-20 10:45:01.258716] Fetched 2023 season data from API.
+[2025-04-20 10:45:02.120064] Fetched 2024 season data from API.
+[2025-04-20 10:45:02.960361] Fetched 2025 season data from API.
+[2025-04-20 10:45:02.961369] Gathering participating teams from events...
+[2025-04-20 10:45:02.966361] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 83, in fetchData
+    for j in range(len(i)):
+                   ^^^^^^
+TypeError: object of type 'int' has no len()
+
+[2025-04-20 10:45:02.967369] -------- Fetch ended with error --------
+
+
+[2025-04-20 10:59:23.824311] -------- Fetch start --------
+[2025-04-20 10:59:26.246023] Fetched 2023 season data from API.
+[2025-04-20 10:59:27.446159] Fetched 2024 season data from API.
+[2025-04-20 10:59:28.028920] Fetched 2025 season data from API.
+[2025-04-20 10:59:28.029932] Gathering participating teams from events...
+[2025-04-20 10:59:28.036925] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 83, in fetchData
+    for j in range(len(yearData[i])):
+                       ~~~~~~~~^^^
+KeyError: 0
+
+[2025-04-20 10:59:28.037966] -------- Fetch ended with error --------
+
+
+[2025-04-20 10:59:51.341263] -------- Fetch start --------
+[2025-04-20 10:59:52.002165] Fetched 2023 season data from API.
+[2025-04-20 10:59:52.734753] Fetched 2024 season data from API.
+[2025-04-20 10:59:53.350275] Fetched 2025 season data from API.
+[2025-04-20 10:59:57.610713] Gathering participating teams from events...
+[2025-04-20 11:00:38.409498] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 83, in fetchData
+    for j in range(len(yearData[i])):
+                       ~~~~~~~~^^^
+KeyError: 0
+
+[2025-04-20 11:00:38.625633] -------- Fetch ended with error --------
+
+
+[2025-04-20 11:57:10.784790] -------- Fetch start --------
+[2025-04-20 11:57:11.751710] Fetched 2023 season data from API.
+[2025-04-20 11:57:12.938579] Fetched 2024 season data from API.
+[2025-04-20 11:57:14.030430] Fetched 2025 season data from API.
+[2025-04-20 11:57:17.730097] Gathering participating teams from events...
+[2025-04-20 11:59:22.070848] -------- Fetch start --------
+[2025-04-20 11:59:22.623982] Fetched 2023 season data from API.
+[2025-04-20 11:59:23.104728] Fetched 2024 season data from API.
+[2025-04-20 11:59:23.520929] Fetched 2025 season data from API.
+[2025-04-20 11:59:23.520929] Gathering participating teams from events...
+[2025-04-20 11:59:23.520929] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 83, in fetchData
+    for j in yearData[i]:
+             ~~~~~~~~^^^
+KeyError: 0
+
+[2025-04-20 11:59:23.520929] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:07:02.623053] -------- Fetch start --------
+[2025-04-20 12:07:03.519231] Fetched 2023 season data from API.
+[2025-04-20 12:07:03.985128] Fetched 2024 season data from API.
+[2025-04-20 12:07:04.489509] Fetched 2025 season data from API.
+[2025-04-20 12:07:04.490510] Gathering participating teams from events...
+[2025-04-20 12:07:04.496510] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 84, in fetchData
+    j["teams"] = requests.get(f"{url}/event/{j['key']}/teams", headers=headers).json()
+                                             ~^^^^^^^
+TypeError: 'int' object is not subscriptable
+
+[2025-04-20 12:07:04.497519] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:08:30.663008] -------- Fetch start --------
+[2025-04-20 12:08:31.473494] Fetched 2023 season data from API.
+[2025-04-20 12:08:32.209619] Fetched 2024 season data from API.
+[2025-04-20 12:08:32.693732] Fetched 2025 season data from API.
+[2025-04-20 12:08:37.018031] Gathering participating teams from events...
+[2025-04-20 12:10:25.397301] -------- Fetch start --------
+[2025-04-20 12:10:31.528862] Fetched 2023 season data from API.
+[2025-04-20 12:10:32.109106] Fetched 2024 season data from API.
+[2025-04-20 12:10:32.519043] Fetched 2025 season data from API.
+[2025-04-20 12:10:32.520058] Gathering participating teams from events...
+[2025-04-20 12:10:44.578499] -------- Fetch start --------
+[2025-04-20 12:10:45.026681] Fetched 2023 season data from API.
+[2025-04-20 12:10:45.484618] Fetched 2024 season data from API.
+[2025-04-20 12:10:45.908620] Fetched 2025 season data from API.
+[2025-04-20 12:10:45.909658] Gathering participating teams from events...
+[2025-04-20 12:14:08.155038] -------- Fetch start --------
+[2025-04-20 12:14:08.156033] Data.json does not exist. Creating new file.
+[2025-04-20 12:14:08.642907] Fetched 2023 season data from API.
+[2025-04-20 12:14:09.386216] Fetched 2024 season data from API.
+[2025-04-20 12:14:09.838690] Fetched 2025 season data from API.
+[2025-04-20 12:14:09.844356] Gathering participating teams from events...
+[2025-04-20 12:27:03.895143] -------- Fetch start --------
+[2025-04-20 12:27:04.644707] Fetched 2023 season data from API.
+[2025-04-20 12:27:05.087726] Fetched 2024 season data from API.
+[2025-04-20 12:27:05.488063] Fetched 2025 season data from API.
+[2025-04-20 12:27:05.489063] Gathering participating teams from events...
+[2025-04-20 12:27:05.491064] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 84, in fetchData
+    for i in tqdm(range(len(yearData)), desc=yearData[list(yearData()[i])]): #i's are years, j's are events within those years.
+                                                           ^^^^^^^^^^
+TypeError: 'dict' object is not callable
+
+[2025-04-20 12:27:05.492067] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:27:31.985401] -------- Fetch start --------
+[2025-04-20 12:27:35.787992] Fetched 2023 season data from API.
+[2025-04-20 12:27:40.735912] Fetched 2024 season data from API.
+[2025-04-20 12:27:41.703350] Fetched 2025 season data from API.
+[2025-04-20 12:27:41.704359] Gathering participating teams from events...
+[2025-04-20 12:27:41.706358] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 84, in fetchData
+    for i in tqdm(range(len(yearData)), desc=yearData[list(yearData())[i]]): #i's are years, j's are events within those years.
+                                                           ^^^^^^^^^^
+TypeError: 'dict' object is not callable
+
+[2025-04-20 12:27:41.707359] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:27:57.565800] -------- Fetch start --------
+[2025-04-20 12:28:03.125329] Fetched 2023 season data from API.
+[2025-04-20 12:28:03.697038] Fetched 2024 season data from API.
+[2025-04-20 12:28:04.598811] Fetched 2025 season data from API.
+[2025-04-20 12:28:04.599805] Gathering participating teams from events...
+[2025-04-20 12:28:04.602801] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 84, in fetchData
+    for i in tqdm(range(len(yearData)), desc=yearData[list(yearData)[i]]): #i's are years, j's are events within those years.
+                                                                     ^
+UnboundLocalError: cannot access local variable 'i' where it is not associated with a value
+
+[2025-04-20 12:28:04.603821] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:28:43.010924] -------- Fetch start --------
+[2025-04-20 12:28:43.011928] Data.json does not exist. Creating new file.
+[2025-04-20 12:28:44.617937] Fetched 2023 season data from API.
+[2025-04-20 12:28:45.276862] Fetched 2024 season data from API.
+[2025-04-20 12:28:45.882814] Fetched 2025 season data from API.
+[2025-04-20 12:28:49.545715] Gathering participating teams from events...
+[2025-04-20 12:33:04.263464] -------- Fetch start --------
+[2025-04-20 12:33:04.922809] Fetched 2023 season data from API.
+[2025-04-20 12:33:05.351866] Fetched 2024 season data from API.
+[2025-04-20 12:33:05.711868] Fetched 2025 season data from API.
+[2025-04-20 12:33:05.712888] Gathering participating teams from events...
+[2025-04-20 12:33:05.714870] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 84, in fetchData
+    for i in tqdm(range(len(yearData)), desc=yearData[list(yearData.keys())[i]]): #i's are years, j's are events within those years.
+                                                                            ^
+UnboundLocalError: cannot access local variable 'i' where it is not associated with a value
+
+[2025-04-20 12:33:05.715874] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:35:29.932874] -------- Fetch start --------
+[2025-04-20 12:35:30.387496] Fetched 2023 season data from API.
+[2025-04-20 12:35:31.405142] Fetched 2024 season data from API.
+[2025-04-20 12:35:31.760729] Fetched 2025 season data from API.
+[2025-04-20 12:35:31.761728] Gathering participating teams from events...
+[2025-04-20 12:35:31.814219] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 85, in fetchData
+    for j in tqdm(yearData[list(yearData.keys())[i]], desc=yearData[list(yearData.keys())[i]]):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tqdm\std.py", line 1098, in __init__
+    self.refresh(lock_args=self.lock_args)
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tqdm\std.py", line 1347, in refresh
+    self.display()
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+            ^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tqdm\std.py", line 1151, in __str__
+    return self.format_meter(**self.format_dict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tqdm\std.py", line 584, in format_meter
+    bool_prefix_colon_already = (prefix[-2:] == ": ")
+                                 ~~~~~~^^^^^
+TypeError: unhashable type: 'slice'
+
+[2025-04-20 12:35:31.815209] -------- Fetch ended with error --------
+
+
+[2025-04-20 12:36:47.038499] -------- Fetch start --------
+[2025-04-20 12:36:47.892691] Fetched 2023 season data from API.
+[2025-04-20 12:36:48.490252] Fetched 2024 season data from API.
+[2025-04-20 12:36:48.898114] Fetched 2025 season data from API.
+[2025-04-20 12:36:48.899118] Gathering participating teams from events...
+[2025-04-20 12:37:29.582368] -------- Fetch start --------
+[2025-04-20 12:37:30.700560] Fetched 2023 season data from API.
+[2025-04-20 12:37:31.822282] Fetched 2024 season data from API.
+[2025-04-20 12:37:32.336144] Fetched 2025 season data from API.
+[2025-04-20 12:37:59.076144] Gathering participating teams from events...
+[2025-04-20 14:08:57.466310] -------- Fetch start --------
+[2025-04-20 14:08:58.697033] Fetched 2023 season data from API.
+[2025-04-20 14:08:59.215951] Fetched 2024 season data from API.
+[2025-04-20 14:09:00.199167] Fetched 2025 season data from API.
+[2025-04-20 14:09:00.352457] -------- Fetch finished --------
+
+
+[2025-04-20 14:21:35.958147] -------- Fetch start --------
+[2025-04-20 14:21:35.981144] 2023 season already in Data.json. API request not sent.
+[2025-04-20 14:21:35.981144] 2024 season already in Data.json. API request not sent.
+[2025-04-20 14:21:35.982147] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 14:21:35.983141] Deleting old 2025 season data from Data.json.
+[2025-04-20 14:21:36.507139] Fetched 2025 season data from API.
+[2025-04-20 14:21:36.508138] Gathering participating teams from events...
+[2025-04-20 14:22:09.030440] -------- Fetch start --------
+[2025-04-20 14:22:09.054535] 2023 season already in Data.json. API request not sent.
+[2025-04-20 14:22:09.056535] 2024 season already in Data.json. API request not sent.
+[2025-04-20 14:22:09.057540] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 14:22:09.058535] Deleting old 2025 season data from Data.json.
+[2025-04-20 14:22:09.466880] Fetched 2025 season data from API.
+[2025-04-20 14:22:09.467879] Gathering participating teams from events...
+[2025-04-20 14:30:25.365069] -------- Fetch finished --------
+
+
+[2025-04-20 14:35:28.767296] -------- Fetch start --------
+[2025-04-20 14:35:29.173191] 2023 season already in Data.json. API request not sent.
+[2025-04-20 14:35:29.174204] 2024 season already in Data.json. API request not sent.
+[2025-04-20 14:35:29.175202] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 14:35:29.176193] Deleting old 2025 season data from Data.json.
+[2025-04-20 14:35:29.827415] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 88, in fetchData
+    for i in tqdm(yearData[list(yearData.keys())[i]], desc=f"Gathering teams from {year} season events..."):
+                                                 ^
+UnboundLocalError: cannot access local variable 'i' where it is not associated with a value
+
+[2025-04-20 14:35:29.828441] -------- Fetch ended with error --------
+
+
+[2025-04-20 14:36:47.783573] -------- Fetch start --------
+[2025-04-20 14:36:48.166606] 2023 season already in Data.json. API request not sent.
+[2025-04-20 14:36:48.167580] 2024 season already in Data.json. API request not sent.
+[2025-04-20 14:36:48.168579] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 14:36:48.169579] Deleting old 2025 season data from Data.json.
+[2025-04-20 14:36:48.681586] An error occurred:
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 89, in fetchData
+    event = yearData[list(yearData.keys())[year]][i]
+                     ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+IndexError: list index out of range
+
+[2025-04-20 14:36:48.682585] -------- Fetch ended with error --------
+
+
+[2025-04-20 14:43:20.661171] -------- Fetch start --------
+[2025-04-20 14:43:21.057510] 2023 season already in Data.json. API request not sent.
+[2025-04-20 14:43:21.058505] 2024 season already in Data.json. API request not sent.
+[2025-04-20 14:43:21.059503] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 14:43:21.060507] Deleting old 2025 season data from Data.json.
+[2025-04-20 14:43:22.106157] Fetched 2025 season data from API.
+[2025-04-20 14:45:30.401012] An error occurred:
+Traceback (most recent call last):
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\ssl_.py", line 460, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\ssl_.py", line 504, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\ssl_.py", line 460, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\ssl_.py", line 504, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 89, in fetchData
+    event["teams"] = requests.get(f"{url}/event/{event['key']}/teams", headers=headers).json()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+[2025-04-20 14:45:30.402004] -------- Fetch ended with error --------
+
+
+[2025-04-20 15:20:48.200910] -------- Fetch start --------
+[2025-04-20 15:20:48.584908] 2023 season already in Data.json. API request not sent.
+[2025-04-20 15:20:48.584908] 2024 season already in Data.json. API request not sent.
+[2025-04-20 15:20:48.585907] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 15:20:48.586907] Deleting old 2025 season data from Data.json.
+[2025-04-20 15:20:48.616905] An error occurred:
+Traceback (most recent call last):
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001DDCC206250>: Failed to resolve 'www.thebluealliance.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.thebluealliance.com', port=443): Max retries exceeded with url: /api/v3/events/2025 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001DDCC206250>: Failed to resolve 'www.thebluealliance.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\kingo\OneDrive\Documents\GitHub\Misc-python-programs\Blue alliance scrobbler\TBA Data fetcher.py", line 85, in fetchData
+    yearData[year] = numerate(requests.get(f"{url}/events/{year}", headers=headers).json())
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.thebluealliance.com', port=443): Max retries exceeded with url: /api/v3/events/2025 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001DDCC206250>: Failed to resolve 'www.thebluealliance.com' ([Errno 11001] getaddrinfo failed)"))
+
+[2025-04-20 15:20:48.617907] -------- Fetch ended with error --------
+
+
+[2025-04-20 15:24:06.927543] -------- Fetch start --------
+[2025-04-20 15:24:07.317989] 2023 season already in Data.json. API request not sent.
+[2025-04-20 15:24:07.318984] 2024 season already in Data.json. API request not sent.
+[2025-04-20 15:24:07.319984] 2025 season already in Data.json, but season is not yet over. Proceeding with update.
+[2025-04-20 15:24:07.320984] Deleting old 2025 season data from Data.json.
+[2025-04-20 15:24:07.861542] Fetched 2025 season data from API.
+[2025-04-20 15:25:59.828865] -------- Fetch finished --------
+
+
